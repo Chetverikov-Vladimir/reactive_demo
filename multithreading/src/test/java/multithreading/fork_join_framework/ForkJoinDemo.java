@@ -1,4 +1,4 @@
-package fork_join_framework;
+package multithreading.fork_join_framework;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package executor_framework;
+package multithreading.executor_framework;
 
 import org.junit.jupiter.api.Test;
 

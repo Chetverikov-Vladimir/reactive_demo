@@ -1,3 +1,5 @@
+package multithreading.threads;
+
 import org.junit.jupiter.api.Test;
 
 public class SimpleThreadRun {
@@ -16,18 +18,12 @@ public class SimpleThreadRun {
      */
     @Test
     public void runnableImplements() {
-        Thread runnableThread = new Thread(new RunnableThread());
+        Runnable task = () -> System.out.println("Print from  " + this.getClass().getSimpleName() + " thread " + Thread.currentThread());
+        Thread runnableThread = new Thread(task);
         runnableThread.start();
     }
 
     class SampleThread extends Thread {
-        public void run() {
-            System.out.println("Print from  " + this.getClass().getSimpleName() + " thread " + Thread.currentThread());
-        }
-    }
-
-    class RunnableThread implements Runnable {
-        @Override
         public void run() {
             System.out.println("Print from  " + this.getClass().getSimpleName() + " thread " + Thread.currentThread());
         }
