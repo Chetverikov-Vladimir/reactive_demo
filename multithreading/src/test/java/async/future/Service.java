@@ -1,15 +1,18 @@
 package async.future;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Service {
+    private static Logger logger = LogManager.getLogger();
 
     public int getId() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-
             e.printStackTrace();
         }
-        System.out.println("Return ID");
+        logger.info("Return ID");
         return 1;
     }
 
@@ -19,7 +22,7 @@ public class Service {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Return balance");
+        logger.info("Return balance");
         return 1000 + id;
     }
 }
