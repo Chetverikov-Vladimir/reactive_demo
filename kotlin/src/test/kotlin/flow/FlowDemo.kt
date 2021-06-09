@@ -25,7 +25,6 @@ class FlowDemo {
                 emit(i)
             }
         }
-
         detector.zip(temperature) { smoke, temp -> Indication(smoke, temp) }.collect { checkAlert(it) }
     }
 
